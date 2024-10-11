@@ -60,31 +60,33 @@ function apagarConteudo(){
 
 function apagarCaracter(){
 
-    const resultado = document.getElementById('resultado')
+    const resultado = document.getElementById('resultado') // localiza o id  no html 
     resultado.value = resultado.value.slice(0, -1) // nova string a partir do 0
 }
 
-function adicionarNumero(value) {
+function adicionarNumero(value) { //o parametro rece os valores do numero clicado 
     const resultado = document.getElementById('resultado')
-    resultado.value += value // adiciona o valor do botao
-    valorAtual  += value
+    resultado.value += value // adiciona o valor do botao por conta do parametro 
+    valorAtual  += value // armazena o valor atual  para ser calculado apos a escolha do operador 
 }
 
 
 function definirOperador(op){
 
-    operador = op // parametro 
-    valorAnterior = valorAtual // armazena
-    valorAtual = ""
+    operador = op // armazena a operacao na variavel global operador 
+    valorAnterior = valorAtual // armazena o promeiro numero antes do operador ser chamado 
+    valorAtual = "" // quando o operador e selcionado e limpa o primeiro gaor para que o segundo seja digotado
 
-    document.getElementById('resultado').value = '' //limpa
+    document.getElementById('resultado').value = '' //limpa a tela para aparecer apenas o segundo numero
+
 }
 
 
 function calcular(){
 
    
-    // converter
+    // declaro as variaveis e converto a string para numeor 
+
     let n1 = parseFloat(valorAnterior) 
     let n2 = parseFloat(valorAtual) 
     let resultado; // armazena
